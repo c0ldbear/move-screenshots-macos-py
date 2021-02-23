@@ -1,4 +1,4 @@
-import shutil, os
+import os
 from pathlib import Path
 
 
