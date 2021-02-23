@@ -14,6 +14,7 @@ def main():
 
     #  Move all screenshots by renaming them
     pathScreenshots = p.joinpath(p, './Pictures/screenshots/')
+
     for file in screenshots:
         os.rename(p.joinpath(pathDesktop, file), p.joinpath(pathScreenshots, file))
 
