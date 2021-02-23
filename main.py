@@ -1,10 +1,12 @@
 import os
 from pathlib import Path
 
+from getUserDesktop import getUserDesktop
+
 def main():
     # Get the absolute path to the users desktop
     p = Path.home()
-    pathDesktop = p.joinpath(p, './Desktop/')
+    pathDesktop = getUserDesktop()
 
     # List Comprehensions to get all the screenshots
     screenshots = [file for file in os.listdir(pathDesktop) if "screenshot" in file.lower()]
