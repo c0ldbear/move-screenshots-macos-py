@@ -6,7 +6,7 @@ def main():
     p = Path.home()
     #screenshotPath = p + "/Desktop/"
     print(p)
-    pathDesktop = p.joinpath('/Users/teddy/', './Desktop/')
+    pathDesktop = p.joinpath(p, './Desktop/')
     print(pathDesktop)
 
     # List Comprehensions
