@@ -1,7 +1,6 @@
 import os
 from pathlib import Path
 
-
 def main():
     # Get the absolute path to the users desktop
     p = Path.home()
