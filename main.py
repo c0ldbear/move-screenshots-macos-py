@@ -14,6 +14,10 @@ def main():
     print(screenshots)
 
     # TODO: Move the found files to /Users/teddy/Pictures/screenshots
+    pathScreenshots = p.joinpath(p, './Pictures/screenshots/')
+    print(pathScreenshots)
+    for file in screenshots:
+        os.rename(p.joinpath(pathDesktop, file), p.joinpath(pathScreenshots, file))
 
 if __name__ == '__main__':
     main()
