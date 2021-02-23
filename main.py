@@ -3,13 +3,14 @@ from pathlib import Path
 
 
 def main():
+    # Get the absolute path to the users desktop
     p = Path.home()
     pathDesktop = p.joinpath(p, './Desktop/')
 
-    # List Comprehensions
+    # List Comprehensions to get all the screenshots
     screenshots = [file for file in os.listdir(pathDesktop) if "screenshot" in file.lower()]
 
-    # TODO: Move the found files to /Users/teddy/Pictures/screenshots
+    #  Move all screenshots by renaming them
     pathScreenshots = p.joinpath(p, './Pictures/screenshots/')
     for file in screenshots:
         os.rename(p.joinpath(pathDesktop, file), p.joinpath(pathScreenshots, file))
