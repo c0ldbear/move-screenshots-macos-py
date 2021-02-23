@@ -3,6 +3,7 @@ from pathlib import Path
 
 from getUserDesktop import getUserDesktop
 from getScreenshotFiles import getListOfScreenshotFiles
+from getPathScreenshot import getScreenshotPath
 
 def main():
     # Get the absolute path to the users desktop
@@ -13,7 +14,7 @@ def main():
     screenshots = getListOfScreenshotFiles(pathDesktop)
 
     #  Move all screenshots by renaming them
-    pathScreenshots = p.joinpath(p, './Pictures/screenshots/')
+    pathScreenshots = getScreenshotPath()
 
     for file in screenshots:
         os.rename(p.joinpath(pathDesktop, file), p.joinpath(pathScreenshots, file))
