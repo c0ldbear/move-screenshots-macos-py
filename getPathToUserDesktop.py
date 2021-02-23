@@ -1,4 +1,4 @@
 from pathlib import Path
 
-def getUserDesktop():
+def getPathToUserDesktop():
     return Path.joinpath(Path.home(), './Desktop/')

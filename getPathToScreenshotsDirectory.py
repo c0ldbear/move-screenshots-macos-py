@@ -1,4 +1,4 @@
 from pathlib import Path
 
-def getScreenshotPath():
+def getPathToScreenshotsDirectory():
     return Path.joinpath(Path.home(), './Pictures/screenshots/')
