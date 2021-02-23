@@ -1,20 +1,22 @@
-import os
-from pathlib import Path
+# main.py
 
+from getPathToUserDesktop import getPathToUserDesktop
+from getPathToScreenshotFiles import getListOfScreenshotFiles
+from getPathToScreenshotsDirectory import getPathToScreenshotsDirectory
+from moveScreenshotFiles import moveScreenshotFiles
 
 def main():
     # Get the absolute path to the users desktop
-    p = Path.home()
-    pathDesktop = p.joinpath(p, './Desktop/')
+    pathDesktop = getPathToUserDesktop()
 
-    # List Comprehensions to get all the screenshots
-    screenshots = [file for file in os.listdir(pathDesktop) if "screenshot" in file.lower()]
+    # Get the path to ~/Pictures/screenshots
+    pathScreenshots = getPathToScreenshotsDirectory()
+    
+    # Get a list of all the screenshots at ~/Desktop/
+    screenshots = getListOfScreenshotFiles(pathDesktop)
 
     #  Move all screenshots by renaming them
-    pathScreenshots = p.joinpath(p, './Pictures/screenshots/')
-    for file in screenshots:
-        os.rename(p.joinpath(pathDesktop, file), p.joinpath(pathScreenshots, file))
+    moveScreenshotFiles(pathDesktop, pathScreenshots, screenshots)
 
 if __name__ == '__main__':
     main()
-
